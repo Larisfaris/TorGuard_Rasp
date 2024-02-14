@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tor_Guard_Backend_rasp", "Tor_Guard_Backend_rasp.csproj", "{75271A59-E382-4555-8B42-199A6783D5A1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{75271A59-E382-4555-8B42-199A6783D5A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75271A59-E382-4555-8B42-199A6783D5A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75271A59-E382-4555-8B42-199A6783D5A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75271A59-E382-4555-8B42-199A6783D5A1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3A2BA26D-7B96-440F-A3B9-0505C3E05087}
+	EndGlobalSection
+EndGlobal
