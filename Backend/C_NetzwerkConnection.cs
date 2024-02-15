@@ -11,6 +11,9 @@ namespace TorGuard
     {
         // Definition einer Klasse, die die NETRESOURCE-Struktur repräsentiert.
         // Diese Struktur wird verwendet, um eine Netzwerkressource zu definieren, zu der eine Verbindung hergestellt oder die getrennt werden soll.
+
+        
+
         [StructLayout(LayoutKind.Sequential)]
         private class NETRESOURCE
         {

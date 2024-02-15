@@ -4,7 +4,6 @@ using System.Net;
 using System.Text.Json;
 using System.Windows;
 using TorGuard.Backend;
-
 using System.ComponentModel;
 using System.Runtime.InteropServices;
 
@@ -12,11 +11,18 @@ namespace TorGuard
 {
     public partial class ServerZugriff 
     {
-        // Ersetzen Sie 'benutzername' und 'passwort' durch Ihre tatsächlichen Anmeldedaten
-        string benutzername = "lm";
-        string passwort = "";
+        //sudo apt-get update
+        //sudo apt-get install samba samba-common-bin
+        //sudo mount -t cifs -o username =< Windows - Username >, password =< Windows - Passwort > //Windows-PC-IP/Freigabename /mnt/windows_share
 
-        string Speicherpfade = @"C:\Users\lemen\Desktop\Test_TorGuard";
+        //Ordner auf Pc erweiterte freigabe einstellen
+        //In realität Gastkonto einrichten für raspberry -> Sicherheit 
+
+        // Ersetzen Sie 'benutzername' und 'passwort' durch Ihre tatsächlichen Anmeldedaten
+        string benutzername = "lemen";
+        string passwort = "454824";
+
+        string speicherpfade_PC = @"C:\Users\lemen\Desktop\Test_TorGuard";
         public ServerZugriff()
         {        
         }      
@@ -27,20 +33,20 @@ namespace TorGuard
             try
             { 
                 // Pfad zur SMB-Freigabe auf dem Raspberry Pi
-                string smbPath1 = Speicherpfade;
+                string smbPath1 = speicherpfade_PC;
 
                 // Die NetworkCredential-Klasse wird verwendet, um die Anmeldedaten für den Zugriff auf die SMB-Freigabe anzugeben
                 NetworkCredential credentials = new NetworkCredential(benutzername, passwort);
 
                 // CredentialCache wird verwendet, um die Anmeldedaten zusammen mit dem Pfad der Freigabe zu speichern
                 CredentialCache cache = new CredentialCache();
-                cache.Add(new Uri(Speicherpfade), "Basic", credentials);
+                cache.Add(new Uri(speicherpfade_PC), "Basic", credentials);
 
                 // NetworkConnection stellt eine Verbindung zur SMB-Freigabe her, unter Verwendung der oben definierten Anmeldedaten
-                using (new NetworkConnection(Speicherpfade, credentials))
+                using (new NetworkConnection(speicherpfade_PC, credentials))
                 {
                     // Directory.GetFiles wird verwendet, um alle Dateien im angegebenen Pfad der SMB-Freigabe aufzulisten
-                    foreach (var file in Directory.GetFiles(Speicherpfade))
+                    foreach (var file in Directory.GetFiles(speicherpfade_PC))
                     {
                         // Hier können Sie mit den Dateien arbeiten, z.B. sie auflisten oder ihren Inhalt lesen
                         Console.WriteLine(file);
@@ -84,11 +90,11 @@ namespace TorGuard
         {
             try
             {
-                using (var netzwerkVerbindung = new NetworkConnection(Speicherpfade, new NetworkCredential(benutzername, passwort)))
+                using (var netzwerkVerbindung = new NetworkConnection(speicherpfade_PC, new NetworkCredential(benutzername, passwort)))
                 {
                     {
                         // Kopieren der Datei von der Netzwerkfreigabe auf den lokalen PC
-                        File.Copy(Speicherpfade, localDestinationPath, true);
+                        File.Copy(speicherpfade_PC, localDestinationPath, true);
                     }
                 }
             }

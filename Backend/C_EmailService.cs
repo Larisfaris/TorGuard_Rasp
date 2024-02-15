@@ -35,8 +35,8 @@ namespace TorGuard
         // Methode zum asynchronen Versenden von E-Mails
         public async Task<bool> EmailsAsync()
         {
-            Speicherpfade speicherpfade = new Speicherpfade();  
-            string filePath_Mail = Path.Combine(speicherpfade.Speichername_Emailkonfig,speicherpfade.Speichername_Emailkonfig);
+            //Speicherpfade speicherpfade = new Speicherpfade();  
+            string filePath_Mail = Path.Combine(Speicherpfade.Instance.Speichername_Emailkonfig, Speicherpfade.Instance.Speichername_Emailkonfig);
 
            
                 string json = File.ReadAllText(filePath_Mail);

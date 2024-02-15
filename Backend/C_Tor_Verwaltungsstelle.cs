@@ -12,9 +12,9 @@ namespace TorGuard
         // Methode zum Laden aller Tore aus den JSON-Dateien
         public void LoadAllTore()
         {
-            Speicherpfade speicherpfade = new Speicherpfade();
+            //Speicherpfade speicherpfade = new Speicherpfade();
 
-            string[] torFiles = Directory.GetFiles(speicherpfade.Speicherpfad_tor, "*.json");
+            string[] torFiles = Directory.GetFiles(Speicherpfade.Instance.Speicherpfad_tor, "*.json");
             foreach (string file in torFiles)
             {
                 try
@@ -47,8 +47,8 @@ namespace TorGuard
         // Methode zum Speichern eines spezifischen Tors
         private void SaveTor(HC_Tore tor)
         {
-            Speicherpfade speicherpfade = new Speicherpfade();
-            string filePath = Path.Combine(speicherpfade.Speicherpfad_tor, $"{tor.TorName}.json");
+            //Speicherpfade speicherpfade = new Speicherpfade();
+            string filePath = Path.Combine(Speicherpfade.Instance.Speicherpfad_tor, $"{tor.TorName}.json");
             string json = JsonSerializer.Serialize(tor, new JsonSerializerOptions { WriteIndented = true });
             File.WriteAllText(filePath, json);
         }

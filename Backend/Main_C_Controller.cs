@@ -12,14 +12,7 @@ namespace TorGuard
         private C_EmailService emailService;
         private Aufnahme aufnahme;
 
-        Speicherpfade speicherpfade = new Speicherpfade(
-               @"\\RASPBERRYPI\MeineFreigabe",//speicherpfadTor,
-               @"\\RASPBERRYPI\MeineFreigabe",//speicherpfadKonfig,
-               "Tor_config.json",//speichernameTorKonfig,
-               "Netzwerk_config.json",//speichernameNetzwerkKonfig,
-               "Empfängerlist_config.json",//speichernameEmailKonfig,
-               "AufnahmeKonfig.json"//speichernameAufnahmeKonfig
-            );
+        //public Speicherpfade speicherpfade;
         public Controller()
         {
             torVerwaltung = new Tor_Verwaltungsstelle();
@@ -30,6 +23,8 @@ namespace TorGuard
             gpioPins.OnCrashDetected += GpioPins_OnCrashDetected;
 
             torVerwaltung.LoadAllTore();
+
+            
         }
 
 

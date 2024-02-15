@@ -18,6 +18,7 @@ namespace TorGuard
         private GpioController gpioController;
         private Tor_Verwaltungsstelle torVerwaltung;
 
+
         public C_GPIOpins()
         {
             InitializeGPIO();
@@ -25,15 +26,15 @@ namespace TorGuard
 
         private void InitializeGPIO()
         {
-            gpioController = new GpioController();
+            //gpioController = new GpioController();
           
-            foreach (var tor in torVerwaltung.GetAllTore())
-            {
-                gpioController.OpenPin(tor.GpioPinIndoor, PinMode.InputPullUp);
-                gpioController.OpenPin(tor.GpioPinOutdoor, PinMode.InputPullUp);
+            //foreach (var tor in torVerwaltung.GetAllTore())
+            //{
+            //    gpioController.OpenPin(tor.GpioPinIndoor, PinMode.InputPullUp);
+            //    gpioController.OpenPin(tor.GpioPinOutdoor, PinMode.InputPullUp);
 
-                Console.WriteLine($"GPIO-Pins für Tor {tor.TorName}: {tor.GpioPinIndoor} (Innen) und {tor.GpioPinOutdoor} (Außen) konfiguriert.");
-            }
+            //    Console.WriteLine($"GPIO-Pins für Tor {tor.TorName}: {tor.GpioPinIndoor} (Innen) und {tor.GpioPinOutdoor} (Außen) konfiguriert.");
+            //}
         }
 
 

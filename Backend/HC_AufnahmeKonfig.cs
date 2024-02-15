@@ -33,9 +33,9 @@ namespace TorGuard
             {
                 if (instance == null)
                 {
-                    Speicherpfade speicherpfade = new Speicherpfade();
+                    //Speicherpfade speicherpfade = new Speicherpfade();
 
-                    string filePath = Path.Combine(speicherpfade.Speicherpfad_Konfig, speicherpfade.Speichername_Aufnahemekonfig);
+                    string filePath = Path.Combine(Speicherpfade.Instance.Speicherpfad_Konfig, Speicherpfade.Instance.Speichername_Aufnahemekonfig);
                     if (File.Exists(filePath))
                     {
                         string json = File.ReadAllText(filePath);
